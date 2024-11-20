@@ -1,8 +1,11 @@
-from okx import PublicDataClient, AccountClient, TradingClient
+from okx import AccountClient, FundingClient, PublicDataClient, TradingClient
+
 from core.settings import config
 
 
 class OKXClient:
+
+    "Pair example: BTC-USDT"
 
     def __init__(self, key: str, secret: str, password: str) -> None:
         self._key = key
@@ -16,6 +19,10 @@ class OKXClient:
     @property
     def account(self):
         return AccountClient(self._key, self._secret, self._password)
+
+    @property
+    def funding(self):
+        return FundingClient(self._key, self._secret, self._password)
 
     @property
     def traiding(self):

@@ -1,10 +1,11 @@
+from exchanges.common.enums import OrderTypes, Sides
 from exchanges.okx_client.main import okx_client
-from exchanges.common.enums import Sides, OrderTypes
 
 
 def main():
+    amount = "1"
     response = okx_client.traiding.place_order(
-        "BTC-USDT", "cash", Sides.SELL.value, OrderTypes.MARKET.value, "1"
+        "MEMEFI-USDT", "cash", Sides.SELL.value, OrderTypes.MARKET.value, amount
     )
 
     print(response["data"][0].get("sMsg"))

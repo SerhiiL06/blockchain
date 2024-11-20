@@ -1,7 +1,9 @@
-from pybitget import Client
-from core.settings import config
 from typing import Protocol, TypeVar
+
+from pybitget import Client
 from pybitget.enums import ORDER_SIDES
+
+from core.settings import config
 
 client = Client(config.BITGET_KEY, config.BITGET_SECRET, config.BITGET_PASS)
 
